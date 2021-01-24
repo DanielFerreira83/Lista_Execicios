@@ -14,36 +14,33 @@
 # o	        FGTS (11%)                      : R$  121,00
 # o	        Total de descontos              : R$  165,00
 #         Salário Liquido                 : R$  935,00
-def folha():
-    sal_hora = float(input('Valor da hora trabalhada: '))
-    hora = int(input('Hora trabalhada no mês: '))
-    salario = sal_hora * hora
-    if salario <= 900:
-        sal_bruto = salario
-    elif salario <= 1500:
-        ir = salario * 0.05
-        inss = salario * 0.1
-        fgts = salario * 0.11
-        desconto = ir + inss + fgts
-    elif salario <= 2500:
-        ir = salario * 0.1
-        inss = salario * 0.1
-        fgts = salario * 0.11
-        desconto = ir + inss + fgts
-    elif salario > 2500:
-        ir = salario * 0.2
-        inss = salario * 0.1
-        fgts = salario * 0.11
-        desconto = ir + inss + fgts
 
-    print(f'''
-    Salario Bruto R$        {salario:.2f}
-    (-) IR R$               {ir:.2f}
-    (-) INSS R$             {inss:.2f}
-    FGTS (11%) R$           {fgts:.2f}
-    Total desconto R$       {desconto:.2f}
-    Salário líquido R$      {salario - desconto:.2f}''')
+sal_hora = float(input('Valor da hora trabalhada: '))
+hora = int(input('Hora trabalhada no mês: '))
+salario = sal_hora * hora
+if salario <= 900:
+    sal_bruto = salario
+elif salario <= 1500:
+    ir = salario * 0.05
+    inss = salario * 0.1
+    fgts = salario * 0.11
+    desconto = ir + inss + fgts
+elif salario <= 2500:
+    ir = salario * 0.1
+    inss = salario * 0.1
+    fgts = salario * 0.11
+    desconto = ir + inss + fgts
+elif salario > 2500:
+    ir = salario * 0.2
+    inss = salario * 0.1
+    fgts = salario * 0.11
+    desconto = ir + inss + fgts
 
+print(f'''
+Salario Bruto R$        {salario:.2f}
+(-) IR R$               {ir:.2f}
+(-) INSS R$             {inss:.2f}
+FGTS (11%) R$           {fgts:.2f}
+Total desconto R$       {desconto:.2f}
+Salário líquido R$      {salario - desconto:.2f}''')
 
-if __name__== '__main__':
-    folha()
